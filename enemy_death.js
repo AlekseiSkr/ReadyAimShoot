@@ -9,6 +9,7 @@ lib.ssMetadata = [
 
 (lib.AnMovieClip = function(){
 	this.actionFrames = [];
+	this.ignorePause = false;
 	this.gotoAndPlay = function(positionOrLabel){
 		cjs.MovieClip.prototype.gotoAndPlay.call(this,positionOrLabel);
 	}
@@ -61,6 +62,52 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	prototype.frameBounds = frameBounds;
 	return prototype;
 	}
+
+
+(lib.Symbol3 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#000000").s().p("EgrCALVIAA2pMBWFAAAIAAWpg");
+	this.shape.setTransform(275.5,72.5);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = getMCSymbolPrototype(lib.Symbol3, new cjs.Rectangle(0,0,551,145), null);
+
+
+(lib.Symbol1 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+
+	// Layer_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#000000").s().p("EgrCALVIAA2pMBWFAAAIAAWpg");
+	this.shape.setTransform(275.5,72.5);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+	this._renderFirstFrame();
+
+}).prototype = getMCSymbolPrototype(lib.Symbol1, new cjs.Rectangle(0,0,551,145), null);
 
 
 (lib.enemy_dead = function(mode,startPosition,loop,reversed) {
@@ -119,56 +166,106 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	this.actionFrames = [0];
-	this.isSingleFrame = false;
+	this.actionFrames = [0,5];
 	// timeline functions:
 	this.frame_0 = function() {
-		if(this.isSingleFrame) {
-			return;
-		}
-		if(this.totalFrames == 1) {
-			this.isSingleFrame = true;
-		}
 		var root = this;
 		var space = 32;
+		root.stop();
+		
+		//Flags to track game
+		var reloaded = false;
+		var enemyAlive = true;
+		var lose = false;
+		var gameStarted = false;
+		
+		//Amount of second before enemy shoot
+		var maxTimer = 5;
+		var random = Math.random() * (maxTimer);
+		
+		//Press "P" to start game and timer
+		document.addEventListener('keydown', (event) => { 
+			if(event.keyCode == 80){
+				gameStarted = true;
+				setTimeout(function(){ 
+					lose = true;
+					if(enemyAlive){
+						console.log("You lose.");
+					}
+					}, Math.floor(random * 1000));
+			}
+		});
+		
+		console.log("Random time before enemy shoot: " + random);
+		
+		
 		
 		this.enemy_dead.visible=false;
 		
+			
 		document.addEventListener('keydown', (event) => { 
-			if(event.keyCode == space){
-				root.enemy_dead.visible=!root.enemy_dead.visible;
-				root.enemy_alive.visible=!root.enemy_alive.visible;
+			if(event.keyCode == 13 && !reloaded && gameStarted){
+				reloaded = true;
+				this.gotoAndPlay(2);
+		
 			}
 		});
+		
+		document.addEventListener('keydown', (event) => { 
+			if(event.keyCode == space && reloaded){
+				root.enemy_dead.visible=true;
+				root.enemy_alive.visible=false;
+				enemyAlive = false;
+				console.log("Is enemy alive: " + enemyAlive);
+				console.log("You won.");
+			} 
+		});
+	}
+	this.frame_5 = function() {
+		this.stop();
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(5).call(this.frame_5).wait(2));
+
+	// upper_black
+	this.instance = new lib.Symbol1();
+	this.instance.setTransform(275.5,-13.85,1,1,0,0,0,275.5,72.5);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).wait(1).to({y:7.75},0).wait(1).to({y:29.3},0).wait(1).to({y:50.9},0).wait(1).to({y:72.45},0).to({_off:true},1).wait(1));
+
+	// down_black
+	this.instance_1 = new lib.Symbol3();
+	this.instance_1.setTransform(275.5,412.2,1,1,0,0,0,275.5,72.5);
+	this.instance_1._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1).to({_off:false},0).wait(1).to({y:391.05},0).wait(1).to({y:369.9},0).wait(1).to({y:348.75},0).wait(1).to({y:327.6},0).to({_off:true},1).wait(1));
 
 	// enemy_alive
 	this.enemy_alive = new lib.enemy_1();
 	this.enemy_alive.name = "enemy_alive";
 	this.enemy_alive.setTransform(408.8,189.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.enemy_alive).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.enemy_alive).wait(7));
 
 	// enemy_dead
 	this.enemy_dead = new lib.enemy_dead();
 	this.enemy_dead.name = "enemy_dead";
 	this.enemy_dead.setTransform(408,215);
 
-	this.timeline.addTween(cjs.Tween.get(this.enemy_dead).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.enemy_dead).wait(7));
 
 	// bg
-	this.instance = new lib.BG();
-	this.instance.setTransform(0,0,0.4345,0.5044);
+	this.instance_2 = new lib.BG();
+	this.instance_2.setTransform(0,0,0.4345,0.5044);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(7));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(275,200,276,200);
+p.nominalBounds = new cjs.Rectangle(275,113.7,276,371);
 // library properties:
 lib.properties = {
 	id: '7F8158AC1078634D828DE7F668F4DC44',
@@ -178,7 +275,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/enemy_death_atlas_1.png?1624970355261", id:"enemy_death_atlas_1"}
+		{src:"images/enemy_death_atlas_1.png?1625519833013", id:"enemy_death_atlas_1"}
 	],
 	preloads: []
 };
@@ -275,7 +372,7 @@ an.makeResponsive = function(isResp, respDim, isScale, scaleType, domContainers)
 an.handleSoundStreamOnTick = function(event) {
 	if(!event.paused){
 		var stageChild = stage.getChildAt(0);
-		if(!stageChild.paused){
+		if(!stageChild.paused || stageChild.ignorePause){
 			stageChild.syncStreamSounds();
 		}
 	}
