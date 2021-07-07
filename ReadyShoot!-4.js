@@ -1041,9 +1041,6 @@ if (reversed == null) { reversed = false; }
 		var enemyStandingEl = this.getChildAt(3);
 		enemyDeadEl.visible=false;
 		
-		console.log('DAB')
-		
-		console.log('DAB')
 		//Amount of second before enemy shoot
 		var maxTimer = 5;
 		var random = Math.random() * (maxTimer);
@@ -1304,7 +1301,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/ReadyShoot_4_atlas_1.png?1625668405264", id:"ReadyShoot_4_atlas_1"}
+		{src:"images/ReadyShoot_4_atlas_1.png?1625668504769", id:"ReadyShoot_4_atlas_1"}
 	],
 	preloads: []
 };
