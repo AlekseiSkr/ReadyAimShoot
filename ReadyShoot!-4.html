@@ -14,7 +14,7 @@
 <title>ReadyShoot!-4</title>
 <!-- write your code here -->
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="ReadyShoot!-4.js?1625668577857"></script>
+<script src="ReadyShoot!-4.js?1625680994256"></script>
 <script>
 // Global Scripts
 	//Class of global money---------------------------
@@ -42,17 +42,21 @@ class Money {
 //---------------------------------------------------------------------
 class CharacterDrip {
 	constructor() {
+		this.isDead = false;
 		this.hat = 0;
 		this.sleeve = 0;
 	}
+	getLifeState(){
+		return this.dead;
+	}
+	setLifeState(state){
+		this.isDead = state; 
+	}
 	getDrip() {
-		return { hat: this.hat, sleeve: this.sleeve };
+		return { hat: this.hat };
 	}
 	setHat(hatNumber) {
 		this.hat = hatNumber;
-	}
-	setSleeve(sleeveNumber) {
-		this.sleeve = sleeveNumber;
 	}
 }
 //Inits--------------------------------------------------------
