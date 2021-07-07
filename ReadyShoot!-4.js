@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"RECOVER_ReadyShoot_4_atlas_1", frames: [[780,1432,373,175],[0,1615,375,171],[1233,1432,14,14],[1155,1432,76,70],[1270,1359,425,176],[400,1432,378,175],[0,0,1280,720],[1697,1359,74,137],[775,1609,146,54],[1270,722,457,635],[1155,1537,373,175],[775,1714,404,153],[0,1432,398,181],[0,722,1268,708],[1530,1537,373,175],[400,1609,373,175],[1282,0,470,600]]}
+		{name:"ReadyShoot_4_atlas_1", frames: [[780,1432,373,175],[0,1615,375,171],[1233,1432,14,14],[1155,1432,76,70],[1270,1359,425,176],[400,1432,378,175],[0,0,1280,720],[1697,1359,74,137],[775,1609,146,54],[1270,722,457,635],[1155,1537,373,175],[775,1714,404,153],[0,1432,398,181],[0,722,1268,708],[1530,1537,373,175],[400,1609,373,175],[1282,0,470,600]]}
 ];
 
 
@@ -28,119 +28,119 @@ lib.ssMetadata = [
 
 
 (lib.apply = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.backBtn = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.Bitmap3 = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.COIN = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.costomise_sign = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.credits = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.download = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.enemy = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.enemyDead = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(8);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.hat1 = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(9);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.hatsButton = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(10);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.introUI = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(11);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.playButton = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(12);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.shop_bg = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(13);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.shopButton = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(14);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.sleevesButton = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(15);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.standingPlayer = function() {
-	this.initialize(ss["RECOVER_ReadyShoot_4_atlas_1"]);
+	this.initialize(ss["ReadyShoot_4_atlas_1"]);
 	this.gotoAndStop(16);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
@@ -919,13 +919,13 @@ if (reversed == null) { reversed = false; }
 
 
 // stage content:
-(lib.RECOVER_ReadyShoot4 = function(mode,startPosition,loop,reversed) {
+(lib.ReadyShoot4 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
 	props.mode = mode;
 	props.startPosition = startPosition;
-	props.labels = {enemyScene:52,Game:23,shopButton:10,"shopButton":21,Intro:21,Credits:22,ShopScripts:44,ShopIntro:29,Shop:44,hatsButton:44};
+	props.labels = {enemyScene:52,enemyDead:52,enemyAlive:52,Game:23,shopButton:10,"shopButton":21,Intro:21,Credits:22,ShopScripts:44,ShopIntro:29,Shop:44,hatsButton:44};
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
@@ -942,7 +942,7 @@ if (reversed == null) { reversed = false; }
 		Moves the playhead to the specified frame number in the timeline and continues playback from that frame.
 		Can be used on the main timeline or on movie clip timelines.
 		*/
-			_this.gotoAndStop(enemyScene);
+			_this.gotoAndPlay('enemyScene');
 		});
 		
 		this.movieClip_7.addEventListener("click", fl_ClickToGoToAndStopAtFrame_2.bind(this));
@@ -1025,17 +1025,25 @@ if (reversed == null) { reversed = false; }
 		//createjs.Ticker.removeEventListener('tick', stage);
 	}
 	this.frame_52 = function() {
-		var root = this;
+		var _this= this;
 		var space = 32;
-		root.stop();
+		_this.stop();
 		
 		//Flags to track game
 		var reloaded = false;
 		var enemyAlive = true;
 		var lose = false;
-		var gameStarted = false;
-		this.enemyDead.visible=false;
 		
+		
+		var gameStarted = false;
+		console.log(this.children);
+		var enemyDeadEl = this.getChildAt(4);
+		var enemyStandingEl = this.getChildAt(3);
+		enemyDeadEl.visible=false;
+		
+		console.log('DAB')
+		
+		console.log('DAB')
 		//Amount of second before enemy shoot
 		var maxTimer = 5;
 		var random = Math.random() * (maxTimer);
@@ -1067,8 +1075,8 @@ if (reversed == null) { reversed = false; }
 		
 		document.addEventListener('keydown', (event) => { 
 			if(event.keyCode == space && reloaded){
-				this.enemyDead.visible=true;
-				this.enemyAlive.visible=false;
+				enemyDeadEl.visible = true
+				enemyStandingEl.visible=false;
 				enemyAlive = false;
 				console.log("Is enemy alive: " + enemyAlive);
 				console.log("You won.");
@@ -1085,10 +1093,10 @@ if (reversed == null) { reversed = false; }
 
 	// Upper_Bar
 	this.instance = new lib.Upper_Bar_Tween("synched",0);
-	this.instance.setTransform(639.9,1.25,1.5497,2.0497,0,0,0,-43,89.7);
+	this.instance.setTransform(639.85,1.35,1.5497,2.0497,0,0,0,-43,89.7);
 	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(53).to({_off:false},0).wait(1).to({regY:3,x:639.85,y:-148.55,startPosition:1},0).wait(1).to({y:-120.7,startPosition:2},0).wait(1).to({y:-92.85,startPosition:3},0).wait(1).to({y:-65,startPosition:4},0).wait(1).to({y:-37.15,startPosition:5},0).wait(1).to({y:-9.3,startPosition:6},0).wait(1).to({y:18.5,startPosition:7},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(53).to({_off:false},0).wait(1).to({regY:3,x:639.8,y:-148.45,startPosition:1},0).wait(1).to({y:-120.6,startPosition:2},0).wait(1).to({y:-92.75,startPosition:3},0).wait(1).to({y:-64.9,startPosition:4},0).wait(1).to({y:-37.05,startPosition:5},0).wait(1).to({y:-9.2,startPosition:6},0).wait(1).to({y:18.6,startPosition:7},0).wait(1));
 
 	// Lower_Bar
 	this.instance_1 = new lib.Lower_Bar("synched",0);
@@ -1106,10 +1114,10 @@ if (reversed == null) { reversed = false; }
 
 	// enemyAlive
 	this.instance_3 = new lib.enemy();
-	this.instance_3.setTransform(900,280);
+	this.instance_3.setTransform(905,280);
 	this.instance_3._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(52).to({_off:false},0).wait(9));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(52).to({_off:false},0).wait(8).to({x:900},0).wait(1));
 
 	// bg
 	this.instance_4 = new lib.Background();
@@ -1296,7 +1304,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/RECOVER_ReadyShoot_4_atlas_1.png?1625665451970", id:"RECOVER_ReadyShoot_4_atlas_1"}
+		{src:"images/ReadyShoot_4_atlas_1.png?1625668405264", id:"ReadyShoot_4_atlas_1"}
 	],
 	preloads: []
 };
@@ -1395,21 +1403,6 @@ an.handleSoundStreamOnTick = function(event) {
 		var stageChild = stage.getChildAt(0);
 		if(!stageChild.paused || stageChild.ignorePause){
 			stageChild.syncStreamSounds();
-		}
-	}
-}
-an.handleFilterCache = function(event) {
-	if(!event.paused){
-		var target = event.target;
-		if(target){
-			if(target.filterCacheList){
-				for(var index = 0; index < target.filterCacheList.length ; index++){
-					var cacheInst = target.filterCacheList[index];
-					if((cacheInst.startFrame <= target.currentFrame) && (target.currentFrame <= cacheInst.endFrame)){
-						cacheInst.instance.cache(cacheInst.x, cacheInst.y, cacheInst.w, cacheInst.h);
-					}
-				}
-			}
 		}
 	}
 }
