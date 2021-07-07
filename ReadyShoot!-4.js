@@ -1301,7 +1301,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/ReadyShoot_4_atlas_1.png?1625668504769", id:"ReadyShoot_4_atlas_1"}
+		{src:"images/ReadyShoot_4_atlas_1.png?1625668577782", id:"ReadyShoot_4_atlas_1"}
 	],
 	preloads: []
 };
