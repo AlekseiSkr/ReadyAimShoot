@@ -1083,7 +1083,7 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	this.actionFrames = [0,21,44,52,60,61,67];
+	this.actionFrames = [0,21,29,44,52,60,61,67];
 	// timeline functions:
 	this.frame_0 = function() {
 		var _this = this;
@@ -1165,9 +1165,17 @@ if (reversed == null) { reversed = false; }
 		_this.shopButton.on('click', function(){
 		_this.gotoAndPlay('ShopIntro');
 		});
+		createjs.Sound.stop();
+		createjs.Sound.play("tumble_weed");
 	}
 	this.frame_21 = function() {
 		this.stop();
+		createjs.Sound.stop();
+		createjs.Sound.play("bg_music");
+	}
+	this.frame_29 = function() {
+		createjs.Sound.stop();
+		createjs.Sound.play("shop_music");
 	}
 	this.frame_44 = function() {
 		var _this = this;
@@ -1212,8 +1220,11 @@ if (reversed == null) { reversed = false; }
 		//createjs.Ticker.removeEventListener('tick', stage);
 	}
 	this.frame_52 = function() {
+		createjs.Sound.stop();
+		createjs.Sound.play("tumble_weed");
 		var _this= this;
 		var space = 32;
+		
 		_this.stop();
 		
 		//Flags to track game
@@ -1251,6 +1262,7 @@ if (reversed == null) { reversed = false; }
 			
 		document.addEventListener('keydown', (event) => { 
 			if(event.keyCode == 13 && !reloaded && gameStarted){
+				createjs.Sound.play("cocking_revolver");
 				reloaded = true;
 				this.gotoAndPlay(54);
 		
@@ -1259,6 +1271,7 @@ if (reversed == null) { reversed = false; }
 		
 		document.addEventListener('keydown', (event) => { 
 			if(event.keyCode == space && reloaded){
+				createjs.Sound.play("pistol_shot");
 				enemyDeadEl.visible = true
 				enemyStandingEl.visible=false;
 				enemyAlive = false;
@@ -1279,14 +1292,14 @@ if (reversed == null) { reversed = false; }
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(21).call(this.frame_21).wait(23).call(this.frame_44).wait(8).call(this.frame_52).wait(8).call(this.frame_60).wait(1).call(this.frame_61).wait(6).call(this.frame_67).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(21).call(this.frame_21).wait(8).call(this.frame_29).wait(15).call(this.frame_44).wait(8).call(this.frame_52).wait(8).call(this.frame_60).wait(1).call(this.frame_61).wait(6).call(this.frame_67).wait(1));
 
 	// Upper_Bar
 	this.instance = new lib.Upper_Bar_Tween("synched",0);
-	this.instance.setTransform(639.75,1.15,1.5497,2.0497,0,0,0,-43,89.5);
+	this.instance.setTransform(639.7,1.3,1.5497,2.0497,0,0,0,-43,89.5);
 	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(53).to({_off:false},0).wait(1).to({regY:3,x:639.7,y:-148.25,startPosition:1},0).wait(1).to({y:-120.4,startPosition:2},0).wait(1).to({y:-92.55,startPosition:3},0).wait(1).to({y:-64.7,startPosition:4},0).wait(1).to({y:-36.85,startPosition:5},0).wait(1).to({y:-9,startPosition:6},0).wait(1).to({y:18.8,startPosition:7},0).to({_off:true},1).wait(7));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(53).to({_off:false},0).wait(1).to({regY:3,x:639.65,y:-148.1,startPosition:1},0).wait(1).to({y:-120.25,startPosition:2},0).wait(1).to({y:-92.4,startPosition:3},0).wait(1).to({y:-64.55,startPosition:4},0).wait(1).to({y:-36.7,startPosition:5},0).wait(1).to({y:-8.85,startPosition:6},0).wait(1).to({y:18.95,startPosition:7},0).to({_off:true},1).wait(7));
 
 	// Lower_Bar
 	this.instance_1 = new lib.Lower_Bar("synched",0);
@@ -1362,7 +1375,7 @@ if (reversed == null) { reversed = false; }
 
 	this.instance_8 = new lib.download();
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.Cursor}]},1).to({state:[{t:this.instance_8},{t:this.Player}]},22).to({state:[]},6).to({state:[{t:this.Cursor}]},5).to({state:[]},18).to({state:[{t:this.Cursor}]},9).to({state:[]},6).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.Cursor}]},1).to({state:[{t:this.Cursor}]},10).to({state:[{t:this.instance_8},{t:this.Player}]},12).to({state:[]},6).to({state:[{t:this.Cursor}]},5).to({state:[]},18).to({state:[{t:this.Cursor}]},9).to({state:[]},5).to({state:[]},1).wait(1));
 
 	// credits_png
 	this.movieClip_7 = new lib.Symbol1();
@@ -1388,7 +1401,7 @@ if (reversed == null) { reversed = false; }
 
 	this.timeline.addTween(cjs.Tween.get(this.shopButton).wait(10).to({_off:false},0).wait(11).to({_off:true},1).wait(46));
 
-	// Layer_2
+	// background
 	this.instance_9 = new lib.Into_bg("synched",0);
 	this.instance_9.setTransform(640,-359.05);
 
@@ -1528,9 +1541,14 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/ReadyShoot_4_atlas_1.png?1625692119629", id:"ReadyShoot_4_atlas_1"},
-		{src:"images/ReadyShoot_4_atlas_2.png?1625692119629", id:"ReadyShoot_4_atlas_2"},
-		{src:"images/ReadyShoot_4_atlas_3.png?1625692119630", id:"ReadyShoot_4_atlas_3"}
+		{src:"images/ReadyShoot_4_atlas_1.png?1625748728523", id:"ReadyShoot_4_atlas_1"},
+		{src:"images/ReadyShoot_4_atlas_2.png?1625748728524", id:"ReadyShoot_4_atlas_2"},
+		{src:"images/ReadyShoot_4_atlas_3.png?1625748728524", id:"ReadyShoot_4_atlas_3"},
+		{src:"sounds/cocking_revolver.mp3?1625748728572", id:"cocking_revolver"},
+		{src:"sounds/pistol_shot.mp3?1625748728572", id:"pistol_shot"},
+		{src:"sounds/shop_music.mp3?1625748728572", id:"shop_music"},
+		{src:"sounds/bg_music.mp3?1625748728573", id:"bg_music"},
+		{src:"sounds/tumble_weed.mp3?1625748728573", id:"tumble_weed"}
 	],
 	preloads: []
 };
@@ -1629,6 +1647,21 @@ an.handleSoundStreamOnTick = function(event) {
 		var stageChild = stage.getChildAt(0);
 		if(!stageChild.paused || stageChild.ignorePause){
 			stageChild.syncStreamSounds();
+		}
+	}
+}
+an.handleFilterCache = function(event) {
+	if(!event.paused){
+		var target = event.target;
+		if(target){
+			if(target.filterCacheList){
+				for(var index = 0; index < target.filterCacheList.length ; index++){
+					var cacheInst = target.filterCacheList[index];
+					if((cacheInst.startFrame <= target.currentFrame) && (target.currentFrame <= cacheInst.endFrame)){
+						cacheInst.instance.cache(cacheInst.x, cacheInst.y, cacheInst.w, cacheInst.h);
+					}
+				}
+			}
 		}
 	}
 }
